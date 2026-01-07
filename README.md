@@ -22,7 +22,7 @@ streamlit run app.py
 To use the CLOB API endpoints separately:
 
 ```bash
-python run_api.py
+python3 run_api.py
 ```
 
 This starts a Flask API server on port 5001 with CLOB endpoints available.
