@@ -1,4 +1,6 @@
-streamlit
-requests
-pydantic
-python-dateutil
+streamlit>=1.24
+pandas>=2.0
+requests>=2.31
+pytest>=9.0
+flask>=3.0
+py-clob-client>=1.0.0
