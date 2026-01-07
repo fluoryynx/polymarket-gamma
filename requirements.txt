@@ -3,4 +3,4 @@ pandas>=2.0
 requests>=2.31
 pytest>=9.0
 flask>=3.0
-py-clob-client>=1.0.0
+py-clob-client>=0.34.0
