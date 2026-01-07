@@ -1,12 +1,15 @@
 import streamlit as st
 import pandas as pd
 
-from src.clients.gamma import fetch_markets
-from src.core.models import MarketRecord
-from src.core.parse import parse_yes_no, hours_to_close
-from src.core.filters import is_candidate
-from src.core.select_focus import pick_focus
+from src.clients import fetch_markets
 
+from src.core import (
+    MarketRecord,
+    parse_yes_no,
+    hours_to_close,
+    is_candidate,
+    pick_focus,
+)
 st.set_page_config(layout="wide")
 st.title("Polymarket – Dual Market Dashboard")
 
