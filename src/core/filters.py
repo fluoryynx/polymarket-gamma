@@ -1,12 +1,16 @@
-def is_candidate(m):
-    if not m.enableOrderBook:
+from src.core.parse import hours_to_close, parse_yes_no
+
+
+def is_candidate(market):
+    """Filter markets for 48h active YES/NO with order book"""
+    if not market.get("enableOrderBook", False):
         return False
-    if not m.active or m.closed:
+    if not market.get("active", False) or market.get("closed", False):
         return False
-    if m.hours_to_close is None:
+    hours = hours_to_close(market.get("endDate"))
+    if hours is None or not (0 < hours <= 48):
         return False
-    if not (0 < m.hours_to_close <= 48):
-        return False
-    if not m.yes_token_id or not m.no_token_id:
+    yes_price, no_price, yes_token, no_token, invalid = parse_yes_no(market)
+    if not yes_token or not no_token:
         return False
     return True
